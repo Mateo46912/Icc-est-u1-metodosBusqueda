@@ -12,7 +12,11 @@ public class MetodosBusqueda{
     public MetodosBusqueda(Persona[] persons){
         showConsole = new ShowConsole();
         this.people = persons;
+        showPersonByName();
+        System.out.println();
         showPerson();
+        
+        
     }
     
     // public int BusquedaLineal(int arreglo[], int datoBuscado){   // Se usa este metodo si el arreglo no esta ordenado
@@ -45,14 +49,27 @@ public class MetodosBusqueda{
             showConsole.showMessage("Persona no encontrada");
         }
     }
-    // public int findPersonByName(String name){
-    //     return -1;
-    // }
-    // public void showPersonByName(){
-    //     String nameTofinde = showConsole.inputName();
-    //     int indexPerson = findPersonByName(nameTofinde);
+    public int findPersonByName(String name){
+        for(int i =0; i < people.length;i++){
+        if(people[i].getName().equalsIgnoreCase(name)){
+            return i; 
+        }
+    }
+         return -1;
+    }
+    public void showPersonByName(){
+        String nameTofinde= showConsole.inputName();
+        int index = findPersonByName(nameTofinde);
+        if (index >=0){
+            showConsole.showMessage("Persona con nombre " +nameTofinde+ " encontrada");
+            showConsole.showMessage(people[index].toString());
+            System.out.println();
+           
+        }else{
+            showConsole.showMessage("No se encuentra el nombre en la lista");
+        }
 
-    // }
+    }
 
 
     

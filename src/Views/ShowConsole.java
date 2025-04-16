@@ -14,12 +14,19 @@ public class ShowConsole {
     
     public void showBanner(){
         System.out.println("--Metodos de Busqueda--");
+        System.out.println();
     }
 
     public int inputCode (){
         System.out.print("Ingrese un codigo: ");
         int code = scanner.nextInt();
         return code;
+    }
+
+    public String inputName(){
+        System.out.print("Ingrese el nombre a buscar: ");
+        String name = scanner.next();
+        return name;
     }
 
     public void showMessage(String message){
