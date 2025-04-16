@@ -1,6 +1,7 @@
 import java.util.*;
 import Models.Persona;
 import Controllers.MetodosBusqueda;
+import Controllers.MetodosDeBusquedaBinarios;
 
 public class App {
     
@@ -8,19 +9,28 @@ public class App {
        //INSTANCIAS 
             Persona[] personas = new Persona[7];
             personas[0] = new Persona (101,"Juan"); 
-            personas[1] = new Persona (102,"Maria"); 
+            personas[1] = new Persona (102,"Maria");   //pregunta de prueba cunatas comparaciones con el metodo binario
             personas[2] = new Persona (103,"Carlos"); 
             personas[3] = new Persona (104,"Ana"); 
             personas[4] = new Persona (105,"Luis"); 
             personas[5] = new Persona (106,"Sofia"); 
             personas[6] = new Persona (107,"Pedro"); 
            
-            MetodosBusqueda mB = new MetodosBusqueda(personas);
-
-
+            //MetodosBusqueda mB = new MetodosBusqueda(personas);
+            MetodosDeBusquedaBinarios mBB = new MetodosDeBusquedaBinarios(personas);
+            mBB.showPersonByCode();
+            mBB.ordenarBurbuja(personas);
+            mBB.showPersonByName();
         }
 
+
+        
+
+
     }
+
+
+
     
 
 

@@ -14,7 +14,7 @@ public class MetodosBusqueda{
         this.people = persons;
         showPersonByName();
         System.out.println();
-        showPerson();
+        showPersonByCode();
         
         
     }
@@ -39,7 +39,7 @@ public class MetodosBusqueda{
        return -1;
     }
 
-    public void showPerson (){
+    public void showPersonByCode (){
         int codeToFind = showConsole.inputCode();
         int indexPerson = findPersonByCode(codeToFind);
         if (indexPerson >= 0){
